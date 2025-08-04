@@ -4,17 +4,31 @@ import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 
 export const getPosts = async () => {
-    const posts = await prisma.post.findMany();
+    const posts = await prisma.user.findUnique({
+        where: {
+            email:"zeeshan@gmail.com"
+        },
+        include: {
+            posts: true
+        }
+    });
     return posts;
 }
 
 export const createPost = async (formData: FormData) => {
     const title = formData.get("title") as string;
     const content = formData.get("content") as string;
-    await prisma.post.create({
+    await prisma.user.update({
+        where: {
+            email: "zeeshan@gmail.com"
+        },
         data: {
-            title,
-            content
+            posts: {
+                create: {
+                    title,
+                    content
+                }
+            }
         }
     })
     redirect("/posts");

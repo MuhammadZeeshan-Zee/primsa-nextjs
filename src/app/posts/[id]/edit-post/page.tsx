@@ -40,7 +40,7 @@
 
 // export default EditPost;
 
-import { getPost, updatePost } from "@/actions/post";
+import { getPost } from "@/actions/post";
 import PostForm from "@/modules/post-form";
 import React from "react";
 
