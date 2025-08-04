@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getPosts } from "@/actions/post";
 import Link from "next/link";
 import React from "react";
@@ -13,7 +14,7 @@ const Posts = async () => {
         Create Post
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-        {user && user.posts.map((post) => (
+        {user && user.posts.map((post: any) => (
           <div key={post.id} className="bg-white p-5 rounded-lg shadow-md">
             <Link href={`/posts/${post.id}`}>
               <h2 className="text-gray-600">{post.title}</h2>
