@@ -4,7 +4,6 @@ import React from "react";
 
 const Posts = async () => {
   const user = await getPosts();
-  console.log(user);
   return (
     <div className="text-center pt-32 px-5">
       <h1 className="text-3xl font-bold text-gray-800">
