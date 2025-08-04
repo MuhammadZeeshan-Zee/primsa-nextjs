@@ -1,0 +1,13 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "functions": {
+    "src/app/posts/[id]/page.tsx": {
+      "maxDuration": 30
+    },
+    "src/app/posts/[id]/edit-post/page.tsx": {
+      "maxDuration": 30
+    }
+  }
+} 
