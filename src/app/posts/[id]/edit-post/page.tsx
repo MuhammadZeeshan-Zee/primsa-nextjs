@@ -45,8 +45,8 @@ import PostForm from "@/modules/post-form";
 import React from "react";
 export const dynamic = 'force-dynamic';
 
-const EditPost = async ({ params }: { params: { id: string } })=> {
-  const { id } = await params;
+const EditPost = async ({ params }: { params: { id: string } }) => {
+  const { id } = params;
   const post = await getPost(id);
   return (
     <div className="text-center pt-32 px-5">
